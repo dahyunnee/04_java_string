@@ -62,7 +62,7 @@ public class StringEx03 {
 		
 		System.out.println("=========================");
 		
-		// [4] : 구분자로 잘라내기 => split("구분자")
+		// [4] : 구분자로 잘라내기 => split("구분자")  - 배열의 형태로 리턴
 
 		String str1 = "hello, java";
 		String str2 = "hello java programming";
