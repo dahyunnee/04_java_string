@@ -26,10 +26,10 @@ public class StringEx20_테스트문제 {
 							   };
 		String[][] score = {
 				{"번호" ,"과목" , "점수"},
-				{"1001" ,"국어","20"},
-				{"1002" ,"국어","50"},
-				{"1003" ,"국어","60"},
-				{"1004" ,"국어","17"},
+				{"1001" ,"국어","20"}, //20 + 65 + 43
+				{"1002" ,"국어","50"}, // 50 + 15 + 90
+				{"1003" ,"국어","60"}, // 60 + 80 + 30
+				{"1004" ,"국어","17"}, // 17 + 70 + 70
 				{"1001" ,"수학","65"},
 				{"1002" ,"수학","15"},
 				{"1003" ,"수학","80"},
@@ -47,26 +47,30 @@ public class StringEx20_테스트문제 {
 			
 			int sumofScore = 0;
 			
-			for (int j = 1; j < score.length;) {
+			for ( int j = 1; j < score.length; ) {
 				
-				if (students[2].equals(score[0])) {		//번호 일치하는 경우
+				if (students[i][2].equals(score[j][0])) {		//번호 일치하는 경우
+					
+					sumofScore += Integer.parseInt(score[j][2]); 
 					
 					j += 4;
-					sumofScore += Integer.parseInt(score[j][2]); 
 				}
 				else j ++;
 				
 			}
 			
-			if (maxScore < sumofScore ) {			//과목 다 더해지면 비교해야함!!!!!!
+			
+			if (maxScore < sumofScore ) {	//세 과목 다 더해지면 비교하기		
 				
 				
 				maxScore = sumofScore;
-				maxStudent = Integer.parseInt(students[i][2]);
+				maxStudent = i;
+		
 			}
+			
 		}
 		
-		
+		System.out.println("총점이 1등인 학생은 " + students[maxStudent][0] + "입니다.");
 		
 	}
 

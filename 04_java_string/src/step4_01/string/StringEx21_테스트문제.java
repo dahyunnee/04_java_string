@@ -46,6 +46,10 @@ public class StringEx21_테스트문제 {
 
 		String userData = "";
 		
+		String[] moneydatArray = moneyData.split("\n");
+		
+		
+		
 		
 		
 
