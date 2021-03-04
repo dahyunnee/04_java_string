@@ -46,7 +46,30 @@ public class StringEx21_테스트문제 {
 
 		String userData = "";
 		
-		String[] moneydatArray = moneyData.split("\n");
+		String[] moneydataArray = moneyData.split("\n");
+		String[] namedataArray = nameData.split("\n");
+		
+		
+		
+		for (int i = 0; i < moneydataArray.length; i++) {
+			
+			String[] str = moneydataArray[i].split("/");
+			
+			for (int j = 0; j < namedataArray.length; j++) {
+				
+				String[] namedataStr = namedataArray[j].split("/");
+				
+				if ( namedataStr[0].equals(namedataArray[0])) {
+					
+					userData += namedataArray[i] + "/" + str[1] + "\n";
+					
+				}
+			}
+			
+				
+		}
+		
+		System.out.println(userData);
 		
 		
 		
