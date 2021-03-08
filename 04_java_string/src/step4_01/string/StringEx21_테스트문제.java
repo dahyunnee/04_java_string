@@ -53,15 +53,15 @@ public class StringEx21_테스트문제 {
 		
 		for (int i = 0; i < moneydataArray.length; i++) {
 			
-			String[] str = moneydataArray[i].split("/");
+			String[] moneydataStr = moneydataArray[i].split("/");
 			
 			for (int j = 0; j < namedataArray.length; j++) {
 				
 				String[] namedataStr = namedataArray[j].split("/");
 				
-				if ( namedataStr[0].equals(namedataArray[0])) {
+				if ( namedataStr[0].equals(moneydataStr[0])) {
 					
-					userData += namedataArray[i] + "/" + str[1] + "\n";
+					userData += namedataArray[j] + "/" + moneydataStr[1] + "\n";
 					
 				}
 			}

@@ -26,6 +26,69 @@ public class StringEx22_테스트문제 {
 		data += "10003/유재석/3300\n";
 		data += "10002/이영희/200\n";
 		data += "10004/박명수/6800\n";
+		
+		
+		String[] dataArray = data.split("\n");
+		
+		String[][] customerArray = new String[4][3];
+		int customerIndex = 0;
+		
+		
+		for (int i = 0; i < dataArray.length; i++) {
+			
+			
+			String[] dataarrayStr = dataArray[i].split("/");
+			
+			//dataarrayStr[0] = 10002 
+			// [1] = 이영희
+			// [2] = 800
+			
+			
+			for (int j = 0; j < customerArray.length; j++) {
+				
+				if ( dataarrayStr[0].equals(customerArray[j][0])) {		//customer 정보 존재하는 경우
+					
+					
+					int sumofMoney = Integer.parseInt(customerArray[j][2]) + Integer.parseInt(dataarrayStr[2]);
+					customerArray[j][2] = Integer.toString(sumofMoney); 
+							
+					break;
+					
+				}
+				
+				if (j == customerArray.length - 1) {
+					
+					customerArray[customerIndex][0] = dataarrayStr[0];	//row에 추가
+					customerArray[customerIndex][1] = dataarrayStr[1];
+					customerArray[customerIndex ++][2] = dataarrayStr[2];
+							
+					
+				}
+				
+				
+			}
+			
+		}
+		
+		System.out.println("====================================");
+		System.out.println();
+		
+		for (int i = 0; i < customerArray.length; i++) {
+			
+			System.out.print("    ");
+			
+			for (int j = 0; j < customerArray[i].length; j++) {
+				
+				System.out.print(customerArray[i][j] + "    ");
+				
+			}
+			
+			System.out.println("\n");
+			
+		}
+		
+		System.out.println("====================================");
+		
 
 	}
 
